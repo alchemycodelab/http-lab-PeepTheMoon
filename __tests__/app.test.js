@@ -27,6 +27,14 @@ describe('createResponse', () => {
       });
   });
 
+  it('handles the /blue route', () => {
+    return request(app)
+      .get('/blue')
+      .then(res => {
+        expect(res.text).toEqual('<h1>blue</h1>');
+      });
+  });
+
   // it('handles the /echo route', () => {
   //   return request(app)
   //     .post('/echo')
