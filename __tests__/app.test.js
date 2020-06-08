@@ -35,14 +35,12 @@ describe('createResponse', () => {
       });
   });
 
-  // it('handles the /echo route', () => {
-  //   return request(app)
-  //     .post('/echo')
-  //     .then(res => {
-  //       expect(res.text).toEqual({
-  //         status: 200
-  //       });
-  //     });
-  // });
-
+  it('handles the /echo route', () => {
+    return request(app)
+      .post('/echo')
+      .send('Yo bidness')
+      .then(res => {
+        expect(res.text).toEqual('Yo bidness');
+      });
+  });
 });
